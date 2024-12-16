@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.columnContainer {
+  position: relative;
+}
+.columnLeft {
+  float: left;
+  width: 100%;
+}
+.columnRight {
+  float: left;
+  width: 100%;
+  margin-bottom: 4vmin;
+}
+
+.scale {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.scale .left,
+.scale .right {
+  width: 15vmin;
+  height: 15vmin;
+  position: relative;
+}
+.scale .left img,
+.scale .right img {
+  position: absolute;
+  top: 0;
+  width: 15vmin;
+  z-index: 2;
+}
+.scale .left img {
+  left: 2vmin;
+}
+.scale .right img {
+  right: 2vmin;
+}
+.scale .axis {
+  flex-grow: 1;
+}
+.scale .axis .label {
+  display: flex;
+  font-size: 2.5vmin;
+  height: 5vmin;
+  align-items: center;
+}
+.scale .axis .label .left-label,
+.scale .axis .label .right-label {
+  width: 50%;
+  margin: 0 0.5em;
+}
+.scale .axis .label .right-label {
+  text-align: right;
+}
+.scale .axis .axis-bar {
+  display: flex;
+  box-shadow: 0vmin 1px 0.4vmin #aaa;
+  height: 5vmin;
+  background-color: #f3f3f3;
+  color: #888;
+}
+.scale .axis .axis-bar .axis-left,
+.scale .axis .axis-bar .axis-center,
+.scale .axis .axis-bar .axis-right {
+  font-size: 3.2vmin;
+  line-height: 5vmin;
+}
+.scale .axis .axis-bar .axis-left span,
+.scale .axis .axis-bar .axis-right span {
+  padding: 0 1.1vmin;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.scale .axis .axis-bar .axis-left {
+  text-align: right;
+}
+.scale .axis .axis-bar .axis-center {
+  text-align: center;
+  flex-grow: 1;
+}
